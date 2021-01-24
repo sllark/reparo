@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="1028px" viewBox="0 0 1440 1028" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>EE7785CB-7C46-4E75-926D-E84977F00344</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="82.7712656%" y1="7.65075489%" x2="82.7712673%" y2="95.8267873%" id="linearGradient-1">
+            <stop stop-color="#E4E9EB" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="97.7539062%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Landing-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bg-right" fill="url(#linearGradient-1)">
+            <path d="M0,60 C98.5182292,20 194.776042,8.9452826e-15 288.773438,0 C731.414062,0 778.553888,689.313248 1224,690 C1288.60938,690.099609 1360.60938,673.432943 1440,640 L1440,1119 L0,1119 L0,60 Z" transform="translate(720.000000, 559.500000) scale(-1, 1) translate(-720.000000, -559.500000) "></path>
+        </g>
+    </g>
+</svg>

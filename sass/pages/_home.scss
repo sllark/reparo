@@ -1,0 +1,602 @@
+.heroSection{
+
+  overflow: hidden;
+  //justify-content: flex-end;
+  //border: 1px solid black;
+
+  min-height: 100vh;
+
+  .container{
+    flex-flow: row wrap;
+    justify-content: space-between;
+    //border: 1px solid blue;
+    height: 100%;
+
+  }
+
+
+
+
+  &__left{
+    //border: 1px solid hotpink;
+
+    width: 40%;
+
+
+
+    @media only screen and (max-width : 768px) {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1{
+      font-size: 3rem;
+      font-weight: normal;
+      color: $color-primary;
+      margin: 1rem 0;
+      text-align: left;
+
+
+
+      @media only screen and (max-width : 500px) {
+        font-size: 2.4rem;
+        font-weight: bold;
+      }
+
+
+    }
+
+    p{
+      font-size: 1.75rem;
+      width: 100%;
+
+
+
+      @media only screen and (max-width : 768px) {
+        text-align: center;
+
+      }
+
+
+    }
+
+
+    &__btns{
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+
+      margin: 2em 0;
+
+
+      p{
+        margin: 0.5rem 0;
+        text-align: center;
+      }
+    }
+
+    p.small{
+      font-size: 1.4rem;
+    }
+
+  }
+
+
+  &__right{
+    height: 80%;
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 51rem;
+
+
+
+
+
+    @media only screen and (max-width : 950px) {
+      min-height: 40rem;
+    }
+
+
+    @media only screen and (max-width : 768px) {
+      width: 70%;
+      margin: 3rem auto 0;
+      min-height: 50rem;
+
+    }
+
+    @media only screen and (max-width : 660px) {
+      width: 90%;
+      min-height: 55rem;
+
+    }
+
+
+    @media only screen and (max-width : 550px) {
+      min-height: auto;
+    }
+
+
+
+
+
+    .mainImg{
+      width: 50rem;
+      z-index: 10;
+      box-shadow: 6px 6px 20px 8px rgba(0,0,0,.1);
+
+
+
+      @media only screen and (max-width : 550px) {
+        margin: 5rem auto;
+      }
+
+
+    }
+
+    .bgAni{
+
+      position: absolute;
+
+
+      width: 100%;
+      height: 100%;
+
+      img{
+        width: 80%;
+        position: absolute;
+      }
+
+      &__animation{
+
+        img{
+          z-index: 2;
+          width: 65%;
+          top: -32px;
+          left: -49px;
+        }
+
+
+        .smallBubble{
+          width: 60%;
+          top: 6.5%;
+
+
+
+          @media only screen and (max-width : 550px) {
+            left: -11%;
+            top: 5.5%;
+
+          }
+
+
+        }
+        .innerCircle{
+          width: 68%;
+          top: 1.5%;
+          left: -11%;
+          animation: circle 4s ease infinite;
+
+
+          @media only screen and (max-width : 1240px) {
+            top: 2.5%;
+            left: -11.5%;
+          }
+
+          @media only screen and (max-width : 1000px) {
+            top: 2%;
+            left: -15%;
+          }
+
+          @media only screen and (max-width : 768px) {
+            top: 2%;
+            left: -13%;
+          }
+
+          @media only screen and (max-width : 400px) {
+            top: 3%;
+            left: -13%;
+          }
+
+        }
+        .outerCircle{
+          width: 82%;
+           //transform: rotate(245deg);
+          top: -7%;
+          left: -17%;
+          animation: circle 4s ease infinite;
+
+
+          @media only screen and (max-width : 1240px) {
+
+            top: -5%;
+            left: -18%;
+          }
+
+          @media only screen and (max-width : 1000px) {
+            top: -6%;
+            left: -21%;
+          }
+
+
+          @media only screen and (max-width : 550px) {
+            top: -5%;
+            left: -21%;
+          }
+
+
+
+          @media only screen and (max-width : 480px) {
+            top: -4%;
+            left: -21%;
+          }
+
+          @media only screen and (max-width : 400px) {
+            top: -2%;
+            left: -20%;
+          }
+
+
+        }
+
+      }
+
+      @keyframes circle {
+
+        0%{
+          transform: rotate(0deg);
+        }
+
+
+        100%{
+          transform: rotate(360deg);
+        }
+
+
+      }
+      .mainBubble{
+        width: 95%;
+        top: -32px;
+        right: -49px;
+
+        z-index: 1;
+
+      }
+
+
+
+    }
+
+  }
+
+
+
+  &__bottom{
+    margin-top: 2rem;
+    width: 100%;
+    height: 20%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+
+
+    &__about{
+
+      width: 25%;
+      display: flex;
+      height: 100%;
+
+      @media only screen and (max-width : 768px) {
+        width: 50%;
+      }
+
+
+      @media only screen and (max-width : 500px) {
+        width: 90%;
+      }
+
+
+      img{
+        width: 5rem;
+      }
+
+      &__text{
+        margin: 1rem 2rem;
+
+        h3{
+          font-size: 1.7rem;
+          color: $color-primary;
+          text-transform: capitalize;
+          margin: 0 0 0.5rem;
+        }
+        p{
+          font-size: 1.3rem;
+          color: $color-primary;
+          text-transform: capitalize;
+          max-width: 95%;
+        }
+      }
+    }
+  }
+}
+
+
+
+.featuresSection{
+  padding: 5rem 0;
+  flex-flow: column;
+  overflow: hidden;
+
+
+  .bgleft,.bgright{
+
+    position: relative;
+
+    &:after{
+      content: "";
+      display: block;
+      width: 115%;
+      height: 100%;
+      background-image: url("../img/feature-bg.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      left: -10%;
+      top: 0;
+      transform: rotateY(180deg);
+
+    }
+
+  }
+  .bgright{
+
+    &:after{
+
+      transform: rotateY(0deg);
+
+    }
+
+  }
+
+
+
+
+  &__feature{
+
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+    //flex-flow: column;
+
+    margin: 4rem 0;
+    width: 100%;
+    z-index: 10;
+
+
+    @media only screen and (max-width : 768px) {
+      margin: 4rem 0 0;
+    }
+
+    @media only screen and (max-width : 400px) {
+      margin: 0;
+    }
+
+    &__text{
+
+      text-align: center;
+
+      width: 100%;
+
+      h2{
+        font-size: 3rem;
+        color: $color-secondary;
+        margin: 0 0 2rem;
+      }
+
+      p{
+        text-align: center;
+        margin: 1rem auto;
+
+      }
+
+
+    }
+
+
+    &__about{
+
+      margin: 7rem 0 3rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-flow: row wrap;
+
+
+      &__text{
+        width: 45%;
+
+
+        @media only screen and (max-width : 768px) {
+          width: 90%;
+          margin: 0 auto;
+          order: 2;
+
+        }
+
+      }
+
+
+      &__img{
+        width: 50%;
+        text-align: right;
+
+        @media only screen and (max-width : 768px) {
+          width: 90%;
+          margin: 0 auto 3rem;
+          order: 1;
+          text-align: center!important;
+        }
+
+
+        img{
+          width: 90%;
+          box-shadow: 6px 6px 20px 8px rgba(0,0,0,.1);
+        }
+      }
+
+
+    }
+
+  }
+
+}
+
+
+.sectionTestimonial{
+
+
+  .splide__arrow{
+    width: 4rem;
+    height: 4rem;
+
+    svg{
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+
+  }
+
+  .review{
+
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+
+    img{
+      width: 8rem;
+    }
+
+    h5{
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+
+    p{
+      font-size: 1.6rem;
+      width: 90%;
+      text-align: center;
+      max-width: 800px;
+    }
+
+
+
+  }
+
+
+
+}
+
+
+
+.sectionContact{
+
+  p{
+    margin: 0.5rem 0;
+  }
+
+
+
+  form{
+
+    margin: 2rem 0;
+    width: 95%;
+    max-width: 70rem;
+    //border: 1px solid $color-gray-700;
+    font-size: 1.6rem;
+    text-align: center;
+
+    .form-info{
+      display: flex;
+      justify-content: space-between;
+      flex-flow: row wrap;
+      input{
+
+        border: 1px solid $color-gray-500;
+        width: 48%;
+        padding: 1rem;
+        border-radius: 22px;
+        margin: 1rem 0;
+        position: relative;
+
+        @media only screen and (max-width : 768px) {
+          width: 100%;
+        }
+
+        &::placeholder{
+          color: $color-gray-400;
+        }
+
+        &:focus{
+          border: 1px solid $color-gray-900;
+        }
+
+      }
+
+
+    }
+
+    textarea{
+
+      margin: 1rem 0;
+      border: 1px solid $color-gray-500;
+      width: 100%;
+      height: 20rem;
+      padding: 1rem;
+      border-radius: 22px;
+
+      &::placeholder{
+        color: $color-gray-400;
+      }
+      &:focus{
+        border: 1px solid $color-gray-900;
+      }
+    }
+
+
+
+    .submitForm{
+
+      padding: 1rem 5.2rem;
+      border: 1px solid $color-secondary;
+
+      &:focus,&:hover{
+        border: 1px solid $color-gray-900;
+      }
+    }
+
+  }
+
+
+}
+
+
+.bgleft{
+
+  .featuresSection__feature__about__img{
+    text-align: left;
+  }
+
+}
+
