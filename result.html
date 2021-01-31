@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width,initial-scale=1" name="viewport">
+	<title>Reparo Pro</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+</head>
+<body onclick="">
+
+<header>
+	<div class="container">
+		<a href="/">
+			<img alt="logo" src="img/logo.jpg">
+		</a>
+		<ul class="header__nav hideNav">
+			<li>
+				<a href="/">
+					Accueil
+				</a>
+			</li>
+			<li>
+				<a href="/#features" data-section="features">
+					Fonctionnalités
+				</a>
+			</li>
+			<li>
+				<a href="/#testimonial" data-section="testimonial">
+					Avis
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					Télécharger
+				</a>
+			</li>
+			<li>
+				<a href="checkout.html">
+					Acheter
+				</a>
+			</li>
+			<li>
+				<a href="/#contact" data-section="contact">
+					Nous Contacter
+				</a>
+			</li>
+		</ul>
+		<div class="hamburgerMenu">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+</header>
+
+<main>
+	
+	<section class="sectionResult">
+		
+		<h1>
+			Thanks for the payment.
+		</h1>
+		<p>
+			We will send you the serial key soon. Please check your inbox.
+		</p>
+	
+	</section>
+
+
+</main>
+
+<footer>
+	
+	<img alt="" src="img/logo.jpg">
+	<p>
+		Copyright © 2007-2021 RCS LT. All rights reserved.
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad beatae eaque earum, enim exercitationem expedita
+		harum id inventore, labore laborum nobis obcaecati omnis perferendis rerum sequi sint temporibus unde
+		voluptatibus.
+	</p>
+	
+	<ul>
+		<li><a href="#">Lorem</a></li>
+		<li><a href="#">Lorem</a></li>
+		<li><a href="#">Lorem</a></li>
+		<li><a href="#">Lorem</a></li>
+		<li><a href="#">Lorem</a></li>
+	</ul>
+
+</footer>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const isCharged = urlParams.get('isCharged');
+
+    if (isCharged!=="true"){
+
+        let h1=document.querySelector('.sectionResult h1');
+        let p=document.querySelector('.sectionResult p');
+	     
+        h1.innerHTML="Payment Failed."
+        p.innerHTML= urlParams.get('message');
+
+    }else if (isCharged!=="false"){
+        let p=document.querySelector('.sectionResult p');
+        p.innerHTML= urlParams.get('message');
+
+    }
+    
+    
+    
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

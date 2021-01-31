@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width,initial-scale=1" name="viewport">
+	<title>Reparo Pro</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+</head>
+<body onclick="">
+
+<header>
+	<div class="container">
+		<a href="/">
+			<img alt="logo" src="img/logo.jpg">
+		</a>
+		<ul class="header__nav hideNav">
+			<li>
+				<a href="/">
+					Accueil
+				</a>
+			</li>
+			<li>
+				<a href="/#features" data-section="features">
+					Fonctionnalités
+				</a>
+			</li>
+			<li>
+				<a href="/#testimonial" data-section="testimonial">
+					Avis
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					Télécharger
+				</a>
+			</li>
+			<li>
+				<a href="checkout.html">
+					Acheter
+				</a>
+			</li>
+			<li>
+				<a href="/#contact" data-section="contact">
+					Nous Contacter
+				</a>
+			</li>
+		</ul>
+		<div class="hamburgerMenu">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+</header>
+
+<main>
+	
+	<section class="sectionCheckout">
+		
+		<div class="sectionCheckout__productInfo d-flex">
+			<img alt="" src="img/reparo-main-app2.png" class="appImg">
+			<div class="sectionCheckout__productInfo__text">
+				<h2>Lorem ipsum dolor sit amet</h2>
+				<p>
+					All of our products are protected by a money back guarantee. If the software does not perform as advertised, you get a full refund within 30 days of purchase.
+				
+				</p>
+				<img src="img/mb.png" alt="" class="mb">
+			</div>
+		
+		</div>
+		
+		<div class="secure d-flex">
+			<img src="img/lock.png" alt="">
+			<p>
+				This is a secure 256-bit SSL payment. Your personal information is protected.
+			</p>
+		
+		</div>
+		
+		<form action="php/submit.php" class="sectionCheckout__form" id="payment-form" method="post">
+			<fieldset>
+				<div class="row">
+					<label for="name" data-tid="elements_examples.form.name_label">Name</label>
+					<input name="name" id="name" data-tid="elements_examples.form.name_placeholder" type="text" placeholder="Jane Doe" required="" autocomplete="name">
+				</div>
+				<div class="row">
+					<label for="email" data-tid="elements_examples.form.email_label">Email</label>
+					<input name="email" id="email" data-tid="elements_examples.form.email_placeholder" type="email" placeholder="janedoe@gmail.com" required="" autocomplete="email">
+				</div>
+			</fieldset>
+			<div class="form-row">
+				<label for="card-element">
+					Credit or Debit card
+				</label>
+				<div id="card-element">
+					<!-- A Stripe Element will be inserted here. -->
+				</div>
+				
+				<!-- Used to display Element errors. -->
+				<div id="card-errors" role="alert"></div>
+			</div>
+			
+			<button>Pay $33</button>
+		</form>
+		
+		<p class="sectionCheckout__productPrice">Your total is <span class="p-large">33$</span></p>
+		
+		
+		<div class="sectionCheckout__smallText">
+			<p>
+				We give you a full 30 days to test our software and make sure it works as advertised. A refund is issued if the program does not resolve the issues it promised to fix or does not work correctly on your PC. The security of your information is important to us. We use Secure Socket Layer (SSL) technology to protect your personal details and credit card information. By placing this order you agree to the Terms and Conditions
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis consequuntur nostrum perferendis provident qui ut vel veritatis. Aliquam aliquid eaque id molestias officia qui ullam ut voluptatem. Possimus, suscipit!
+			</p>
+		</div>
+	
+	</section>
+
+
+</main>
+
+<footer>
+	
+	<img alt="" src="img/logo.jpg">
+	<p>
+		Copyright © 2007-2021 RCS LT. All rights reserved.
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad beatae eaque earum, enim exercitationem expedita
+		harum id inventore, labore laborum nobis obcaecati omnis perferendis rerum sequi sint temporibus unde
+		voluptatibus.
+	</p>
+	
+	<ul>
+		<li><a href="#">Lorem</a></li>
+		<li><a href="#">Lorem</a></li>
+		<li><a href="#">Lorem</a></li>
+		<li><a href="#">Lorem</a></li>
+		<li><a href="#">Lorem</a></li>
+	</ul>
+
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>
