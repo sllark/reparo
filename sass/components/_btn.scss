@@ -22,7 +22,7 @@
     font-size: 1.45rem;
     padding: 1rem 3.2rem;
     background-color: $color-primary;
-    border: 1px solid black;
+    border: 1px solid $color-secondary;
 
     @media screen and (max-width: 500px) {
       padding: 1.6rem 0.5rem;
@@ -34,7 +34,7 @@
     }
 
     &:hover{
-      border: 1px solid $color-secondary;
+      border: 1px solid $color-primary;
 
     }
 

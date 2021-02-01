@@ -35,12 +35,16 @@
     }
 
     h1{
-      font-size: 2.7rem;
+      font-size: 2.4rem;
       font-weight: normal;
       color: $color-primary;
-      margin: 1rem 0;
       text-align: left;
+      margin: 0;
 
+      &:first-of-type{
+        font-size: 2.6rem;
+        font-weight: bold;
+      }
 
 
       @media only screen and (max-width : 500px) {
@@ -52,6 +56,7 @@
     }
 
     p{
+      margin-top: 1rem;
       font-size: 1.75rem;
       width: 100%;
 
@@ -130,16 +135,15 @@
 
 
     .mainImg{
-      width: 53rem;
+      width: 50rem;
       z-index: 10;
       box-shadow: 6px 6px 20px 8px rgba(0,0,0,.1);
-      transform: translate(-1rem,3rem);
+      transform: translate(-2rem,4rem);
 
 
       @media only screen and (max-width : 550px) {
         margin: 5rem auto;
       }
-
 
     }
 
@@ -210,7 +214,7 @@
         }
         .outerCircle{
           width: 82%;
-           //transform: rotate(245deg);
+          //transform: rotate(245deg);
           top: -7%;
           left: -17%;
           animation: circle 4s ease infinite;
@@ -275,6 +279,171 @@
 
 
     }
+
+
+    .cercleAni{
+
+      position: absolute;
+      width: 80%;
+      height: 100%;
+
+
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //min-height: 100vh;
+
+
+      .loader {
+        //max-width: 15rem;
+        width: 100%;
+        height: auto;
+        stroke-linecap: round;
+      }
+
+      circle {
+        fill: none;
+        stroke-width: 11;
+        animation-name: preloader;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        transform-origin: 170px 170px;
+        will-change: transform;
+
+        &:nth-of-type(1) {
+          stroke-dasharray: 550px;
+        }
+
+        &:nth-of-type(2) {
+          stroke-dasharray: 500px;
+        }
+
+        &:nth-of-type(3) {
+          stroke-dasharray: 450px;
+        }
+
+        &:nth-of-type(4) {
+          stroke-dasharray: 300px;
+        }
+
+        @for $i from 1 through 4 {
+          &:nth-of-type(#{$i}) {
+            animation-delay: -#{$i * 0.15}s;
+          }
+        }
+      }
+
+      @keyframes preloader {
+        50% {
+          transform: rotate(360deg);
+        }
+      }
+
+
+    }
+
+
+    .pulseAni{
+
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      z-index: 0;
+      //background-color: #ededed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //overflow: hidden;
+
+
+
+
+      .pulse {
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        //max-width: 30rem;
+        width: 110%;
+        height: 110%;
+
+
+        circle {
+          fill: $color-primary;
+          transform: scale(0);
+          opacity: 0;
+          transform-origin: 50% 50%;
+          animation: pulse 3s cubic-bezier(.5,.5,0,1) infinite;
+
+          &:nth-child(2) {
+            fill: #7fc6a4;
+            animation: pulse 3s 1.75s cubic-bezier(.5,.5,0,1) infinite;
+          }
+
+          &:nth-child(3) {
+            fill: $color-secondary;
+            animation: pulse 3s 2.5s cubic-bezier(.5,.5,0,1) infinite;
+          }
+
+        }
+
+
+      }
+
+      @keyframes pulse {
+
+        25% {
+          opacity: 1;
+        }
+
+        100% {
+          transform: scale(1);
+        }
+
+      }
+
+    }
+
+
+    .butonAni{
+
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //min-height: 100vh;
+      //background-color: #ededed;
+
+
+
+      .outer-circle {
+        transform-origin: 60px 60px;
+        transition: transform 2s cubic-bezier(0.620, 0.005, 0.000, 1.005);
+      }
+      svg {
+        width: auto;
+        height: 100%;
+      }
+
+
+    }
+
+
+
+
+
+    &:hover .butonAni .outer-circle {
+      cursor: pointer;
+      transform: rotate(360deg);
+    }
+
 
   }
 
@@ -512,6 +681,10 @@
   }
 
 
+  .testimonialSlider{
+    margin-bottom: 4rem;
+  }
+
 
 }
 
@@ -521,6 +694,7 @@
 
   p{
     margin: 0.5rem 0;
+    text-align: center;
   }
 
 
@@ -604,6 +778,72 @@
   .featuresSection__feature__about__img{
     text-align: left;
   }
+
+}
+
+
+
+.sectionPolicies{
+
+
+  .container{
+    max-width: unset;
+    width: 98%;
+
+    h1{
+      font-size: 3rem;
+      margin: 4rem 0 2rem;
+      font-weight: bold;
+    }
+
+
+
+    h3{
+      font-size: 2.4rem;
+      width: 95%;
+      color: #343434;
+      margin: 1rem 0;
+
+      font-weight: bold;
+    }
+
+    h4{
+      font-size: 1.9rem;
+      width: 95%;
+      margin: 0.7rem 0;
+      color: #2d2d2d;
+      font-weight: 600;
+      //color: #565656;
+    }
+
+    p{
+      width: 95%;
+      max-width: unset;
+      margin: 1rem 0;
+      font-size: 1.7rem;
+      //color: $color-secondary;
+      color: #373737;
+
+      a{
+        display: inline-block;
+        font-weight: bold;
+      }
+
+    }
+
+    ul{
+      width: 90%;
+      list-style-type: circle;
+    }
+
+
+
+
+
+
+  }
+
+
 
 }
 
