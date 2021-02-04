@@ -1,18 +1,18 @@
 .sectionCheckout__form{
 
-  width: 50rem;
+  //width: 100%;
+  width: 65rem;
   //background-color: $color-primary;
+  padding: 3rem 2rem 5rem;
+
+
 
 }
-
-.sectionCheckout__form {
-  padding: 0 2rem 2rem;
-}
-
 .sectionCheckout__form * {
   font-family: Roboto, Open Sans, Segoe UI, sans-serif;
   font-size: 16px;
   font-weight: 500;
+  height: 100%;
 }
 
 .sectionCheckout__form fieldset {
@@ -22,23 +22,23 @@
 }
 
 .sectionCheckout__form .row {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: 1rem 0;
+
 }
 
 
 .sectionCheckout__form label {
-  min-width: 70px;
+  min-width: 14rem;
   padding: 11px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   display: block;
+  //border: 1px solid red;
 }
 
-.sectionCheckout__form input, .sectionCheckout__form button {
+.sectionCheckout__form .input, .sectionCheckout__form button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -46,7 +46,7 @@
   border-style: none;
 }
 
-.sectionCheckout__form input:-webkit-autofill {
+.sectionCheckout__form .input:-webkit-autofill {
   //-webkit-text-fill-color: #fce883;
   //transition: background-color 100000000s;
   //-webkit-animation: 1ms void-animation-out;
@@ -58,68 +58,91 @@
 
 .sectionCheckout__form .StripeElement {
   width: 100%;
-  padding: 11px 15px 11px 0;
+  padding: 1rem;
+  border: 1px solid $color-gray-500;
+
 }
 
 
 
-.sectionCheckout__form input {
-  width: 100%;
+.sectionCheckout__form .input,.sectionCheckout__form .row>div {
+  width: calc( 100% - 14rem);
+  min-height: 4.5rem;
   background-color: transparent;
   -webkit-animation: 1ms void-animation-out;
   padding: 1rem;
   border: 1px solid $color-gray-500;
-  box-shadow: 0 3px 10px rgba(0,0,0,.1);
+
+  //box-shadow: 0 3px 10px rgba(0,0,0,.1);
+
+
+  @media screen and (max-width: 500px){
+    width: 100%;
+  }
+
 }
 
 
-.sectionCheckout__form input:focus {
-  border: 1px solid $color-primary;
+
+.sectionCheckout__form .input:focus,.focused {
+  border: 1px solid $color-primary!important;
   box-shadow: 0 3px 15px rgba(0,0,0,0.25);
-}
+  color: $color-text!important;
 
-#card-element {
-  padding: 1.3rem 1rem;
-  border: 1px solid $color-gray-500;
-  box-shadow: 0 3px 10px rgba(0,0,0,.1);
 }
 
 
-#card-element.StripeElement--focus {
-  border: 1px solid $color-primary;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.25);
+.sectionCheckout__form .invalid {
+  border: 1px solid #E25950!important;
+  color: #e25950;
 }
 
 
-.sectionCheckout__form input::-webkit-input-placeholder {
+.sectionCheckout__form .StripeElement--complete,.valid {
+  border: 1px solid $color-primary!important;
+}
+
+
+.sectionCheckout__form .input::-webkit-input-placeholder {
   color: $color-gray-400;
 }
 
-.sectionCheckout__form input::-moz-placeholder {
+.sectionCheckout__form .input::-moz-placeholder {
   color: $color-gray-400;
 }
 
-.sectionCheckout__form input:-ms-input-placeholder {
+.sectionCheckout__form .input:-ms-input-placeholder {
   color: $color-gray-400;
 }
 
 .sectionCheckout__form button {
   display: block;
+  max-width: 32rem;
   width: 100%;
-  height: 40px;
-  margin: 40px 0 0;
-  background-color: $color-primary;
-  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
-  inset 0 1px 0 $color-secondary;
-  border-radius: 4px;
+  height: 7rem;
+  margin: 20px auto 0;
+  //box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+  //inset 0 1px 0 $color-secondary;
   color: #fff;
-  font-weight: 600;
   cursor: pointer;
+  border-radius: 2px!important;
+  font-weight: 700;
+
+
+  background-image: url(../img/secure-lock-icon.png)!important;
+  background-repeat: no-repeat!important;
+  background-position: right 20px center!important;
+  background-size: 22px!important;
+  background-color: #52C601;
+  font-size: 2.6rem;
+
+
 }
 
 
-.sectionCheckout__form button:focus {
-  background-color: $color-primary-dark;
+.sectionCheckout__form button:focus,
+.sectionCheckout__form button:hover {
+  background-color: #3d9301;
   border: 1px solid white;
   box-shadow: 0 3px 20px rgba(0,0,0,0.35);
 }
@@ -129,4 +152,55 @@
   z-index: -22;
   visibility: hidden;
   opacity: 0;
+}
+
+.countryRow{
+  //border:1px solid red!important;
+
+  position: relative;
+
+  select{
+    z-index: 10;
+    cursor: pointer;
+
+  }
+
+
+  .arrow {
+
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+
+
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    cursor: pointer;
+    box-shadow: 4px -4px 0 0 $color-primary inset;
+    transition: all 0.2s;
+    z-index: 5;
+
+
+    @media screen and (max-width: 500px){
+      top: 75%;
+    }
+
+  }
+
+
+  .arrow--down {
+    transform: translateY(-65%) rotate(-45deg);
+  }
+
+
+}
+
+.countryRow.clicked{
+
+  .arrow{
+    transform: translateY(-50%) rotate(135deg);
+
+  }
+
 }

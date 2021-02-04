@@ -1,34 +1,121 @@
-.sectionCheckout{
+.sectionCheckout {
 
-  //background-color: black;
+  background-color: #f1f5f6;
   flex-flow: column;
 
-  padding-top: 6rem;
+  padding-top: 2rem;
 
 
-  &__productInfo{
+  &__productInfo {
+
 
     width: 90%;
     max-width: 90rem;
+    flex-flow: column;
+    align-items: flex-start !important;
 
-    .appImg{
-      width: 40%;
-      box-shadow: 6px 6px 20px 8px rgba(0,0,0,.1);
-      margin: 0 2rem;
+    h4 {
+      font-size: 2.2rem;
+      margin-left: 1.5rem;
+
     }
 
-    &__text{
-      width: 50%;
-      margin: 0 2rem;
 
-      h2{
-        font-size: 3rem;
+    &__text {
+      background-color: white;
+      width: 100%;
+      margin: 1rem 0 2rem;
+      padding: 1.5rem;
+      display: flex;
+      flex-flow: column;
+
+
+      .row {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between !important;
+        margin: 0 0 1rem;
+
+
+        .alignRight {
+          text-align: right;
+        }
+
+        .sm-dNone {
+          @media screen and (max-width: 600px) {
+            display: none;
+
+          }
+        }
+
+        .col {
+
+          width: 50%;
+
+
+          @media screen and (max-width: 600px) {
+            width: 100%;
+            text-align: center;
+
+          }
+
+        }
+
+
       }
-      p{
+
+      .row.total {
+
+
+        justify-content: flex-end !important;
+
+        margin-top: 3rem;
+
+        h3 {
+          font-size: 1.8rem;
+
+          strong {
+            font-weight: bold;
+          }
+
+          @media screen and (max-width: 600px) {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 2.5rem;
+          }
+
+        }
+        @media screen and (max-width: 600px) {
+
+          padding-top: 2rem;
+          border-top: 1px solid $color-gray-300;
+        }
+
+
+      }
+
+
+      h2 {
+        font-size: 1.8rem;
+        font-weight: bold;
+
+        @media screen and (max-width: 600px) {
+          font-size: 2.5rem;
+        }
+      }
+
+      p {
         font-size: 1.5rem;
+        margin: 0.5rem 0;
+
+        @media screen and (max-width: 600px) {
+          font-size: 1.8rem;
+        }
       }
 
-      .mb{
+      .mb {
         width: 9rem;
         margin: 1rem 0;
       }
@@ -39,25 +126,7 @@
   }
 
 
-
-  .secure{
-
-    width: 95%;
-    max-width: 60rem;
-
-    margin: 3rem 0 1rem;
-    img{
-      width: 5rem;
-    }
-    p{
-      font-size: 1.8rem;
-      margin: 0 2rem 0 2rem  ;
-    }
-
-
-  }
-
-  &__productPrice{
+  &__productPrice {
     margin: 1.5rem 0 0;
     font-size: 2.5rem;
     font-weight: bold;
@@ -65,7 +134,7 @@
   }
 
 
-  &__smallText{
+  &__smallText {
 
 
     max-width: 80rem;
@@ -73,7 +142,7 @@
     text-align: center;
     font-size: 1.6rem;
 
-    p{
+    p {
       margin: 1rem 0;
     }
 
@@ -83,17 +152,19 @@
 }
 
 
-.d-flex{
+.d-flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .lds-ring {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
 }
+
 .lds-ring div {
   box-sizing: border-box;
   display: block;
@@ -106,15 +177,19 @@
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: $color-primary transparent transparent transparent;
 }
+
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
 }
+
 .lds-ring div:nth-child(2) {
   animation-delay: -0.3s;
 }
+
 .lds-ring div:nth-child(3) {
   animation-delay: -0.15s;
 }
+
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
@@ -122,4 +197,53 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.white {
+  background-color: white;
+  width: 100%;
+}
+
+
+.checkoutform .input.focused,
+.checkoutform .input:not(.empty) {
+  opacity: 1;
+}
+
+.checkoutform .input.focused::-webkit-input-placeholder,
+.checkoutform .input:not(.empty)::-webkit-input-placeholder {
+  color: #cfd7df;
+}
+
+.checkoutform .input.focused::-moz-placeholder,
+.checkoutform .input:not(.empty)::-moz-placeholder {
+  color: #cfd7df;
+}
+
+.checkoutform .input.focused:-ms-input-placeholder,
+.checkoutform .input:not(.empty):-ms-input-placeholder {
+  color: #cfd7df;
+}
+
+.checkoutform .input.focused + label,
+.checkoutform .input:not(.empty) + label {
+  color: #aab7c4;
+  transform: scale(0.85) translateY(-25px);
+  cursor: default;
+}
+
+.checkoutform .input.focused label {
+  color: #24b47e;
+}
+
+.checkoutform .input.invalid label {
+  color: #ffa27b;
+}
+
+.checkoutform .input.focused + label {
+  background-color: #24b47e;
+}
+
+.checkoutform .input.focused.invalid + label + .baseline {
+  background-color: #e25950;
 }
