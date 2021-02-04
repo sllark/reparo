@@ -111,7 +111,6 @@ try {
 //        echo 'Param is:' . $e->getError()->param . '\n';
 //        echo 'Message is:' . $e->getError()->message . '\n';
 
-
 	 
     header("Location: /06-reparo/result.html?message=Sorry,the card is not valid&isCharged=false");
     exit;
