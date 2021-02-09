@@ -30,6 +30,9 @@ header {
 
     display: flex;
     height: 100%;
+    transition: all 0.3s;
+    transform-origin: top;
+
 
     @media (max-width: 760px) {
       width: 100%;

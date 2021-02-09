@@ -85,6 +85,10 @@ window.addEventListener('load', () => {
 
 
 
+    let deviceSelect=document.querySelector('#devicesSelect');
+
+    deviceSelect.addEventListener('change',handleDevices);
+
 })
 
 
@@ -207,7 +211,46 @@ function stripeTokenHandler(token) {
     hiddenInput.setAttribute('value', token.id);
     form.appendChild(hiddenInput);
 
-    console.log(form);
     // Submit the form
     form.submit();
 }
+
+
+function handleDevices(e){
+
+
+    let deviceSelect=document.querySelector('#devicesSelect');
+    let deviceNumInput=document.querySelector('#deviceNumInput');
+    let deviceNum=document.querySelector('.deviceNum');
+    let priceOld=document.querySelector('.priceOld');
+    let priceDiscounted=document.querySelector('.priceDiscounted');
+    let totalPrice=document.querySelector('.totalPrice');
+    let selectVal=deviceSelect.value;
+
+    if (Number(selectVal) === 1){
+        deviceNum.innerHTML=selectVal+' Appareil';
+        priceOld.innerHTML="&euro; 39.99";
+        priceDiscounted.innerHTML="&euro; 19.99";
+        totalPrice.innerHTML="&euro; 19.99";
+    }else if (Number(selectVal) === 2){
+
+        deviceNum.innerHTML=selectVal+' Appareils';
+        priceOld.innerHTML="&euro; 59.99";
+        priceDiscounted.innerHTML="&euro; 29.99";
+        totalPrice.innerHTML="&euro; 29.99";
+
+    }else if (Number(selectVal) === 3){
+
+        deviceNum.innerHTML=selectVal+' Appareils';
+        priceOld.innerHTML="&euro; 79.99";
+        priceDiscounted.innerHTML="&euro; 39.99";
+        totalPrice.innerHTML="&euro; 39.99";
+
+    }
+
+
+
+    deviceNumInput.value=selectVal;
+
+}
+

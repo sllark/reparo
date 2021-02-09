@@ -1,52 +1,66 @@
 <?php
 require('config.php');
 require('zoho/handleLeads.php');
-
+require('db_connection.php');
 
 try {
+
+    if (!isset($_POST['stripeToken']) || !isset($_POST['email']) || !isset($_POST['firstName']) || !isset($_POST['lastName']) || !isset($_POST['country']) || !isset($_POST['deviceNum'])) {
+
+        header("Location: /06-reparo/result.html?message=Please Submit the form properly.&isCharged=false");
+        exit;
+    }
+
     // Use Stripe's library to make requests...
-
-    $amountToCharge = 33;
-
+    $token = $_POST['stripeToken'];
     $email_address = $_POST['email'];
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $country = $_POST['country'];
+    $deviceNum = $_POST['deviceNum'];
 
+    $deviceNum += 0;
+
+    if ($deviceNum < 1 || $deviceNum > 3) {
+        header("Location: /06-reparo/result.html?message=Please Submit the form properly.&isCharged=false");
+        exit;
+    }
 
     // Get the payment token ID submitted by the form:
-    $token = $_POST['stripeToken'];
+
+    //Get Serial Key
+    //--for now adding a fake serial key
+    $serial_key = getSerialKey();
+
+    if (empty($serial_key)) {
+        header("Location: /06-reparo/result.html?message=No Serial Key found. Please try again latter, Thanks.&isCharged=false");
+        exit;
+    }
+
+
+    if ($deviceNum === 1) {
+        $amountToCharge = 19.99;
+        $descriptio = "19.99 Euro for one device for email:" . $email_address . " and Serial Key:" . $serial_key;
+    } elseif ($deviceNum === 2) {
+        $amountToCharge = 29.99;
+        $descriptio = "29.99 Euro for two device for email:" . $email_address . " and Serial Key:" . $serial_key;
+    } elseif ($deviceNum === 3) {
+        $amountToCharge = 39.99;
+        $descriptio = "39.99 Euro for three device for email:" . $email_address . " and Serial Key:" . $serial_key;
+
+    }
 
 
     // Token is created using Stripe Checkout or Elements!
     $charge = \Stripe\Charge::create([
         'amount' => ($amountToCharge * 100),
-        'currency' => 'usd',
-        'description' => 'Example charge',
+        'currency' => 'eur',
+        'description' => $descriptio,
         'source' => $token,
     ]);
 
-    echo "Charged User";
-    echo '<br>';
-
-
-    //Get Serial Key
-    //--for now adding a fake serial key
-    $serial_key = "dsjldk343nrieh3r94enjfnewuwj";
-
-    echo "get serial key";
-    echo '<br>';
-
 
     //integrate Zoho
-
-
-    //Charged
-    //Lead_ID_Stripe
-    //Serial_Key
-    //Last_Name
-    //Email
-
 
     $leadData = [
         "Charged" => (string)$amountToCharge,
@@ -59,9 +73,6 @@ try {
     ];
 
     insert_data($leadData);
-
-    echo "Inserted User";
-    echo '<br>';
 
 
     //Send mail
@@ -78,14 +89,19 @@ try {
         "Country: " . $country . "\r\n" .
         "Serial Key: " . $serial_key . "\r\n";
 
-    echo "Mail sent";
-    echo '<br>';
 
-    //$sendMail = mail($email, $subject, $msg,$header);
+//    $sendMail = mail($email, $subject, $msg,$header);
 
 
     header("Location: /06-reparo/result.html?message=Please check your inbox, you will recive the Serial keys shortly.&isCharged=true");
     exit;
+
+
+
+
+
+
+
 
 
 //        echo "Redirect to result page";
@@ -103,6 +119,8 @@ try {
 //        print_r($_POST['name']);
 
 } catch (\Stripe\Exception\CardException $e) {
+
+
     // Since it's a decline, \Stripe\Exception\CardException will be caught
 //        echo 'Status is:' . $e->getHttpStatus() . '\n';
 //        echo 'Type is:' . $e->getError()->type . '\n';
@@ -112,7 +130,6 @@ try {
 //        echo 'Message is:' . $e->getError()->message . '\n';
 
 
-	 
     header("Location: /06-reparo/result.html?message=Sorry,the card is not valid&isCharged=false");
     exit;
 
@@ -157,8 +174,3 @@ try {
 }
 
 ?>
-
-
-<h1>hello Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis deserunt enim explicabo
-	maiores nulla quasi ratione sed voluptatem! Culpa cum esse et excepturi iste laborum modi obcaecati omnis
-	perferendis!</h1>

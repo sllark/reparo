@@ -21,7 +21,8 @@
     }
 
 
-    &__text {
+    &__content{
+
       background-color: white;
       width: 100%;
       margin: 1rem 0 2rem;
@@ -36,34 +37,98 @@
         flex-flow: row wrap;
         justify-content: space-between !important;
         margin: 0 0 1rem;
+        align-items: flex-start;
 
+        //border: 1px solid red;
 
-        .alignRight {
-          text-align: right;
-        }
-
-        .sm-dNone {
-          @media screen and (max-width: 600px) {
-            display: none;
-
-          }
-        }
-
-        .col {
-
-          width: 50%;
-
-
-          @media screen and (max-width: 600px) {
-            width: 100%;
-            text-align: center;
-
-          }
-
+        @media screen and (max-width: 600px) {
+          justify-content: center!important;
         }
 
 
       }
+
+
+
+
+      &__about{
+
+        //border: 1px solid red;
+        width: 50%;
+        display: flex;
+
+
+
+        &__img{
+          margin-right: 3%;
+          width: 15%;
+          min-width: 6rem;
+
+
+
+        }
+
+
+        @media screen and (max-width: 600px) {
+          width: 100%;
+        }
+
+
+      }
+
+
+      &__select{
+        //border: 1px solid red;
+
+        width: 15%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        @media screen and (max-width: 600px) {
+          width: 40%;
+          margin-top: 2rem;
+        }
+
+
+
+
+        label{
+          font-size: 1.7rem;
+        }
+
+        select{
+          margin-top: 0.7rem;
+          border: 1px solid $color-gray-500;
+          width: 100%;
+          font-size: 1.5rem;
+          padding:0.3rem;
+
+
+        }
+
+      }
+
+
+
+
+
+      &__price{
+
+        text-align: right;
+
+        @media screen and (max-width: 600px) {
+
+          width: 50%;
+          margin-top: 2rem;
+        }
+
+      }
+
+
+
+
+
 
       .row.total {
 
@@ -97,12 +162,15 @@
       }
 
 
+
+
+
       h2 {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
         font-weight: bold;
 
         @media screen and (max-width: 600px) {
-          font-size: 2.5rem;
+          font-size: 2.7rem;
         }
       }
 
@@ -113,6 +181,11 @@
         @media screen and (max-width: 600px) {
           font-size: 1.8rem;
         }
+      }
+
+      p.p-strike{
+        text-decoration: line-through;
+        font-size: 1.3rem;
       }
 
       .mb {
@@ -143,7 +216,13 @@
     font-size: 1.6rem;
 
     p {
-      margin: 1rem 0;
+      margin: 1rem;
+
+
+      @media screen and (max-width: 500px) {
+        text-align: left;
+      }
+
     }
 
 
