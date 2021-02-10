@@ -4,15 +4,21 @@
 	<meta charset="UTF-8">
 	<meta content="width=device-width,initial-scale=1" name="viewport">
 	<title>Reparo Pro</title>
-	<!--	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">-->
-	<link href="css/main.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+	<link href="css/thankyou.css" rel="stylesheet">
 </head>
 <body onclick="">
+
+
 
 <header>
 	<div class="container">
 		<a href="/">
-			<img alt="logo" src="img/logo.jpg">
+			<picture>
+				<source srcset="img/webp/reparo-logo.webp" type="image/webp">
+				<source srcset="img/reparo-logo.jpg" type="image/jpg">
+				<img alt="reparo logo" src="img/reparo-logo.jpg">
+			</picture>
 		</a>
 		<ul class="header__nav hideNav">
 			<li>
@@ -59,7 +65,11 @@
 						
 						<div class="sectionThankyou__content__block__call">
 							
-							<img src="img/portrait-male-call-center-agent-sm.jpg" alt="">
+							<picture>
+								<source srcset="img/webp/portrait-male-call-center-agent-sm.webp" type="image/webp">
+								<source srcset="img/portrait-male-call-center-agent-sm.jpg" type="image/jpg">
+								<img src="img/portrait-male-call-center-agent-sm.jpg" alt="">
+							</picture>
 							<h4>
 								Appelez le&nbsp;<a href="tel:0182882569">01 82 88 25 69</a>
 							</h4>
@@ -161,6 +171,11 @@
 						</p>
 					
 					
+						<p>
+							<a href="" id="stripeRecipt" target="_blank">
+								Checkout Stripe Receipt Here
+							</a>
+						</p>
 					</div>
 				
 				</div>
@@ -187,19 +202,43 @@
 
 <footer>
 	
-	<img alt="" src="img/logo.jpg">
+	<picture>
+		<source srcset="img/webp/reparo-logo.webp" type="image/webp">
+		<source srcset="img/reparo-logo.jpg" type="image/jpg">
+		<img alt="reparo logo" src="img/reparo-logo.jpg">
+	</picture>
 	<p>
 		Copyright © <span class="year">2021</span> RCS LT. All rights reserved.
 	</p>
 	
 	<ul>
 		<li><a href="privacy-policy.html">Termes et conditions</a></li>
-		<li><a href="donnees-utilisateurs.html">Données Utilisateurs </a></li>
-		<li><a href="politique-de-confidentialite-et-gestion-des-cookies.html">Politique de Cookies </a></li>
+		<li><a href="donnees-utilisateurs.html">Données Utilisateurs  </a></li>
+		<li><a href="politique-de-confidentialite-et-gestion-des-cookies.html">Politique de Cookies  </a></li>
 		<li><a href="EULA.html">EULA </a></li>
 	</ul>
 
 </footer>
+
+<script>
+    (function (w) {
+
+        w.URLSearchParams = w.URLSearchParams || function (searchString) {
+            var self = this;
+            self.searchString = searchString;
+            self.get = function (name) {
+                var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(self.searchString);
+                if (results == null) {
+                    return null;
+                }
+                else {
+                    return decodeURI(results[1]) || 0;
+                }
+            };
+        }
+
+    })(window)
+</script>
 
 <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -212,6 +251,7 @@
     const productNum = document.getElementById('productNum');
     const price = document.getElementById('price');
     const key = document.getElementById('key');
+    const stripeRecipt = document.getElementById('stripeRecipt');
 
 
     firstName.innerHTML = urlParams.get('firstName');
@@ -221,6 +261,11 @@
     key.innerHTML = urlParams.get('key');
     price.innerHTML = urlParams.get('price') + ' &euro;';
     orderNumber.innerHTML = urlParams.get('orderNum');
+    
+    
+    stripeRecipt.href = urlParams.get('redirect');
+    
+    console.log()
 
     let deviceNum=1;
     if (urlParams.get('num')!==null || urlParams.get('num')!==undefined)
@@ -233,11 +278,6 @@
         productNum.innerHTML="1 Appareil";
         
     }
-
-
-
-    if (urlParams.get('redirect')!==null || urlParams.get('redirect')!==undefined)
-	     window.open(urlParams.get('redirect'),'_blank');
     
     
 </script>

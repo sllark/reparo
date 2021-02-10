@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "sass sass/main.scss:css/main.css --watch  --style=compressed  --no-charset"
+    "start": "sass sass/main.scss:css/main.css sass/checkout.scss:css/checkout.css sass/thankyou.scss:css/thankyou.css sass/result.scss:css/result.css --watch  --style=compressed  --no-charset"
   },
   "author": "",
   "license": "ISC",

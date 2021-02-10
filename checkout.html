@@ -5,16 +5,20 @@
 	<meta content="width=device-width,initial-scale=1" name="viewport">
 	<title>Reparo Pro</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
+	<link href="css/checkout.css" rel="stylesheet">
 </head>
 <body onclick="">
 
 <header>
 	<div class="container">
 		<a href="/">
-			<img alt="logo" src="img/logo.jpg">
+			<picture>
+				<source srcset="img/webp/reparo-logo.webp" type="image/webp">
+				<source srcset="img/reparo-logo.jpg" type="image/jpg">
+				<img alt="reparo logo" src="img/reparo-logo.jpg">
+			</picture>
 		</a>
-		<ul class="header__nav hideNav" role="menubar">
+		<ul class="header__nav hideNav">
 			<li>
 				<a href="/">
 					Accueil
@@ -31,7 +35,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/#">
 					Télécharger
 				</a>
 			</li>
@@ -65,7 +69,11 @@
 				<div class="row">
 					<div class="sectionCheckout__productInfo__content__about">
 						<div class="sectionCheckout__productInfo__content__about__img">
-							<img src="img/reparo-sm.jpg" alt="reparo">
+							<picture>
+								<source srcset="img/webp/reparo-sm.webp" type="image/webp">
+								<source srcset="img/reparo-sm.jpg" type="image/jpg">
+								<img src="img/reparo-sm.jpg" alt="reparo software logo">
+							</picture>
 						</div>
 						<div>
 							<h2>
@@ -75,7 +83,12 @@
 								Abonnement de 1 an, <span class="deviceNum">1 Appareil</span>
 							</p>
 							<p>
-								Operating system(s): Pour Microsoft Windows
+								Pour Microsoft Windows
+								<picture>
+									<source srcset="img/webp/windows_logo-sm.webp" type="image/webp">
+									<source srcset="img/windows_logo-sm.jpg" type="image/jpg">
+									<img src="img/windows_logo-sm.jpg" alt="windows logo">
+								</picture>
 							</p>
 						</div>
 					</div>
@@ -418,7 +431,11 @@
 				
 				<button>Acheter Maintenant</button>
 				
-				<img src="img/paiement-securise-garantie_1060x.jpg" alt="" class="mt-4">
+				<picture>
+					<source srcset="img/webp/stripe-payment.webp" type="image/webp">
+					<source srcset="img/stripe-payment.jpg" type="image/jpg">
+					<img src="img/stripe-payment.jpg" alt="stripe payment logos" class="mt-4">
+				</picture>
 			</form>
 		</div>
 		
@@ -456,15 +473,19 @@
 
 <footer>
 	
-	<img alt="" src="img/logo.jpg">
+	<picture>
+		<source srcset="img/webp/reparo-logo.webp" type="image/webp">
+		<source srcset="img/reparo-logo.jpg" type="image/jpg">
+		<img alt="reparo logo" src="img/reparo-logo.jpg">
+	</picture>
 	<p>
 		Copyright © <span class="year">2021</span> RCS LT. All rights reserved.
 	</p>
 	
 	<ul>
 		<li><a href="privacy-policy.html">Termes et conditions</a></li>
-		<li><a href="donnees-utilisateurs.html">Données Utilisateurs </a></li>
-		<li><a href="politique-de-confidentialite-et-gestion-des-cookies.html">Politique de Cookies </a></li>
+		<li><a href="donnees-utilisateurs.html">Données Utilisateurs  </a></li>
+		<li><a href="politique-de-confidentialite-et-gestion-des-cookies.html">Politique de Cookies  </a></li>
 		<li><a href="EULA.html">EULA </a></li>
 	</ul>
 

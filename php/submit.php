@@ -87,7 +87,7 @@ try {
         "Prénom: " . $firstName . "\r\n" .
         "Nom: " . $lastName . "\r\n" .
         "Pays: " . $country . "\r\n" .
-        "Numéro de Commande: " . $firstName . "\r\n" .
+        "Numéro de Commande: " . $charge->id . "\r\n" .
         "Number of devices: " . $deviceNum . "\r\n" .
         "Montant: " . $amountToCharge. " EURO" . "\r\n" .
         "License: " . $serial_key . "\r\n";
@@ -96,7 +96,7 @@ try {
 //    $sendMail = mail($email, $subject, $msg,$header);
 
 
-    header("Location: /06-reparo/thankyou.html?firstName=".$firstName."&lastName=".$lastName."&email=".$email."&country=".$country."&key=".$serial_key."&price=".$amountToCharge."&num=".$deviceNum."&orderNum=".$charge->id."&redirect=".$charge->receipt_url);
+    header("Location: /06-reparo/thankyou.html?firstName=".$firstName."&lastName=".$lastName."&email=".$email_address."&country=".$country."&key=".$serial_key."&price=".$amountToCharge."&num=".$deviceNum."&orderNum=".$charge->id."&redirect=".$charge->receipt_url);
     exit;
 
 
