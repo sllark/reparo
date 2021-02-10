@@ -40,13 +40,13 @@ try {
 
     if ($deviceNum === 1) {
         $amountToCharge = 19.99;
-        $descriptio = "19.99 Euro for one device for email:" . $email_address . " and Serial Key:" . $serial_key;
+        $descriptio = $amountToCharge." Euro for ".$deviceNum." device; Email:" . $email_address . "; Serial Key:" . $serial_key;
     } elseif ($deviceNum === 2) {
         $amountToCharge = 29.99;
-        $descriptio = "29.99 Euro for two device for email:" . $email_address . " and Serial Key:" . $serial_key;
+        $descriptio = $amountToCharge." Euro for ".$deviceNum." devices; Email:" . $email_address . " and Serial Key:" . $serial_key;
     } elseif ($deviceNum === 3) {
         $amountToCharge = 39.99;
-        $descriptio = "39.99 Euro for three device for email:" . $email_address . " and Serial Key:" . $serial_key;
+        $descriptio = $amountToCharge." Euro for ".$deviceNum." devices; Email:" . $email_address . "; Serial Key:" . $serial_key;
 
     }
 
@@ -83,17 +83,20 @@ try {
 
 
     $msg =
-        "First Name: " . $firstName . "\r\n" .
-        "Last Name: " . $lastName . "\r\n" .
         "Email: " . $email_address . "\r\n" .
-        "Country: " . $country . "\r\n" .
-        "Serial Key: " . $serial_key . "\r\n";
+        "Prénom: " . $firstName . "\r\n" .
+        "Nom: " . $lastName . "\r\n" .
+        "Pays: " . $country . "\r\n" .
+        "Numéro de Commande: " . $firstName . "\r\n" .
+        "Number of devices: " . $deviceNum . "\r\n" .
+        "Montant: " . $amountToCharge. " EURO" . "\r\n" .
+        "License: " . $serial_key . "\r\n";
 
 
 //    $sendMail = mail($email, $subject, $msg,$header);
 
 
-    header("Location: /06-reparo/result.html?message=Please check your inbox, you will recive the Serial keys shortly.&isCharged=true");
+    header("Location: /06-reparo/thankyou.html?firstName=".$firstName."&lastName=".$lastName."&email=".$email."&country=".$country."&key=".$serial_key."&price=".$amountToCharge."&num=".$deviceNum."&orderNum=".$charge->id."&redirect=".$charge->receipt_url);
     exit;
 
 
@@ -106,10 +109,19 @@ try {
 
 //        echo "Redirect to result page";
 //        echo '<br>';
-
-
+//
+//
 //        echo '<pre>';
-//        print_r($charge->id);
+//        print_r($charge->receipt_url);
+//    echo '<br>';
+//    echo '<br>';
+//    echo '<br>';
+//    echo '<br>';
+//    echo '<br>';
+//    echo '<br>';
+//    echo '<br>';
+//        print_r($charge);
+
 //        echo '<br>';
 //        print_r($charge->billing_details->address->postal_code);
 //        echo '<br>';

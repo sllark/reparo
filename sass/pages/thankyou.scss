@@ -1,0 +1,177 @@
+.sectionThankyou {
+
+  margin-top: 1rem;
+
+  .container {
+    align-items: flex-start;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: $color-primary;
+  }
+
+
+  &__content {
+
+    display: flex;
+    flex-flow: row wrap;
+
+    .col {
+      width: 50%;
+
+
+      @media screen and (max-width: 650px) {
+        width: 100%;
+      }
+
+    }
+
+
+    &__block {
+
+      display: flex;
+      flex-flow: column;
+
+      border: 1px solid $color-gray-500;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+
+      width: 100%;
+
+      h3 {
+        font-size: 1.9rem;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+        border-bottom: 2px solid rgba($color-primary, 0.5);
+        color: $color-primary;
+
+      }
+
+
+      p {
+        width: 100%;
+        margin: 0.5rem 0 1rem;
+        padding: 0 1rem;
+
+      }
+
+      & > p:last-of-type {
+      }
+
+
+      &__call {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 13rem;
+          border-radius: 100%;
+          z-index: 10;
+        }
+
+        h4 {
+          font-size: 2.8rem;
+          background-color: rgba($color-primary, 1);
+          width: 100%;
+          min-height: 7rem;
+          color: white;
+          transform: translateX(-2.5rem);
+          padding-top: 2%;
+          padding-right: 0.5rem;
+          padding-left: 4rem;
+          min-width: calc( 100% + 2rem - 13rem);
+
+          @media screen and (max-width: 1000px) {
+            font-size: 2.5rem;
+            padding-top: 1%;
+            padding-bottom: 1%;
+          }
+
+
+          @media screen and (min-width: 400px ) and (max-width: 650px) {
+            font-size: 2.8rem;
+            padding-top: 2%;
+            padding-bottom: unset;
+          }
+
+
+
+          a {
+            display: inline;
+            color: white;
+          }
+
+        }
+
+      }
+
+      ul {
+
+        list-style: circle;
+        margin-left: 8%;
+
+       li{
+
+         p{
+           margin: 1rem 0;
+           padding: 0 0.5rem;
+         }
+       }
+
+      }
+
+
+      .p-row{
+        display: flex;
+        justify-content: space-between;
+
+
+        p{
+          width: 70%;
+        }
+
+
+        p:last-of-type{
+          width: 30%;
+          text-align: right;
+        }
+      }
+
+      .bg-light{
+        background-color: $color-gray-300;
+      }
+
+    }
+
+
+    &__info{
+      width: 100%;
+      text-align: center;
+      margin-top: 1rem;
+      background-color: $color-gray-200;
+      padding: 2rem;
+      color: $color-primary;
+
+      p{
+        line-height: 1.7;
+        margin: 0 auto;
+        max-width: 100rem;
+        width: 90%;
+
+        a{
+          display: inline-block;
+          color: $color-primary;
+        }
+      }
+
+    }
+
+
+  }
+
+
+}

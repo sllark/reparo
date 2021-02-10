@@ -2,7 +2,7 @@
   /*min-width: 370px;*/
   /*min-height: 110px;*/
   width: auto;
-  height: 48px;
+  height: 5rem;
   position: fixed;
   top: 90vh;
   left: 2rem;
@@ -22,7 +22,7 @@
     align-items: center;
     border-radius: 22px;
 
-    padding: 0 3rem;
+    padding: 0 3.5rem;
 
     border: 1px solid $color-gray-300;
     background-color: $color-gray-100;
@@ -41,7 +41,7 @@
 
 
   h2{
-    font-size: 14px;
+    font-size: 1.8rem;
     font-weight: 500;
   }
 

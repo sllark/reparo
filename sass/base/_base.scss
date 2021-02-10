@@ -225,10 +225,7 @@ main > .container {
     flex-flow: column;
   }
 
-
-
 }
-
 
 .container.rightAlignCont{
   max-width: 140rem;
@@ -243,5 +240,16 @@ main > .container {
   margin-top: 4rem;
 }
 
+.ml-1{
+  margin-left: 1rem;
+}
 
+.mr-1{
+  margin-right: 1rem;
+}
+
+
+strong{
+  font-weight: bold;
+}
 

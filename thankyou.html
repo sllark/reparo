@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width,initial-scale=1" name="viewport">
+	<title>Reparo Pro</title>
+	<!--	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">-->
+	<link href="css/main.css" rel="stylesheet">
+</head>
+<body onclick="">
+
+<header>
+	<div class="container">
+		<a href="/">
+			<img alt="logo" src="img/logo.jpg">
+		</a>
+		<ul class="header__nav hideNav">
+			<li>
+				<a href="tel:0182882569">
+					Appelez le 01 82 88 25 69 pour une assistance
+				</a>
+			</li>
+		</ul>
+		<div class="hamburgerMenu">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+</header>
+
+<main style="margin-bottom: 2rem;">
+	
+	<section class="sectionThankyou">
+		
+		<div class="container">
+			<h2>
+				Reparo Pro vous remercie pour votre commande.
+			</h2>
+			
+			<div class="sectionThankyou__content">
+				
+				
+				<div class="col">
+					
+					<div class="sectionThankyou__content__block mr-1">
+						
+						
+						<h3>
+							Assistance a l’activation de votre logiciel.
+						</h3>
+						
+						<p>
+							Afin d’activer rapidement votre logiciel, appelez gratuitement le <strong>01 82 88 25 69</strong>.
+							Un technicien se connectera de manière sécurisée a votre ordinateur et procèdera à l’activation du
+							logiciel pour vous. Vous bénéficierez également d’un diagnostic gratuit de votre ordinateur.
+						</p>
+						
+						
+						<div class="sectionThankyou__content__block__call">
+							
+							<img src="img/portrait-male-call-center-agent-sm.jpg" alt="">
+							<h4>
+								Appelez le&nbsp;<a href="tel:0182882569">01 82 88 25 69</a>
+							</h4>
+						
+						</div>
+					
+					
+					</div>
+					
+					
+					<div class="sectionThankyou__content__block mr-1">
+						
+						
+						<h3>
+							Activer votre logiciel vous-même
+						</h3>
+						
+						<p style="margin-bottom: 0">
+							Afin de mettre à niveau votre logiciel vers la version PRO, suivez les étapes suivantes :
+						</p>
+						
+						
+						<ul>
+							<li><p>Sélectionnez avec le curseur de votre souris la clé de licence située à droite et appuyez
+								simultanément sur CTRL + C pour la copier.
+							</p></li>
+							<li><p>Ouvrez la fenêtre de Reparo Cleaner et cliquez sur la première icone en haut a droite, puis
+								sur
+								s´enregistrer.
+							</p></li>
+							<li><p>Tapez votre Email et Nom Complet puis collez la clé de licence dans le champ correspondant
+								et
+								cliquez sur Enregistrer.
+							</p></li>
+							<li><p>Voila ! Votre logiciel est maintenant passé à la version complète !</p></li>
+						</ul>
+					
+					
+					</div>
+				
+				
+				</div>
+				
+				
+				<div class="col">
+					
+					<div class="sectionThankyou__content__block ml-1">
+						
+						<h3>
+							Récapitulatif de la commande :
+						</h3>
+						
+						<p>
+							<strong>Email :</strong>
+							<span id="email"></span>
+						</p>
+						
+						<p>
+							<strong>Prénom :</strong>
+							<span id="firstName"></span>
+						</p>
+						
+						<p>
+							<strong>Nom :</strong>
+							<span id="lastName"></span>
+						</p>
+						<p>
+							<strong>Pays :</strong>
+							<span id="country"></span>
+						</p>
+						
+						<p>
+							<strong>Numéro de Commande:</strong>
+							<span id="orderNumber"></span>
+						</p>
+						
+						<div class="p-row bg-light">
+							<p>
+								<strong>Produit</strong>
+							</p>
+							<p>
+								<strong>Montant</strong>
+							</p>
+						</div>
+						
+						<div class="p-row">
+							<p>
+								Reparo Pro Cleaner 1 an, <span id="productNum">1 Appareil</span>
+							</p>
+							<p id="price">
+								19.99 &euro;
+							</p>
+						</div>
+						
+						
+						<p>
+							<strong>License :</strong>
+							<span id="key"></span>
+						</p>
+					
+					
+					</div>
+				
+				</div>
+				
+				
+				<div class="sectionThankyou__content__info">
+					<p>
+						Vous allez recevoir les informations ci-dessus ainsi que les licences que vous avez acheté directement
+						sur votre boite mail. Vous recevrez également la facture correspondante a votre achat en ligne.
+						Verifiez votre boite mail
+						<a href="mailto:ds@mail.com">example@gmail.com</a> dans les 30 prochaines minutes.
+					</p>
+				</div>
+			
+			</div>
+		
+		
+		</div>
+	
+	</section>
+
+
+</main>
+
+<footer>
+	
+	<img alt="" src="img/logo.jpg">
+	<p>
+		Copyright © <span class="year">2021</span> RCS LT. All rights reserved.
+	</p>
+	
+	<ul>
+		<li><a href="privacy-policy.html">Termes et conditions</a></li>
+		<li><a href="donnees-utilisateurs.html">Données Utilisateurs </a></li>
+		<li><a href="politique-de-confidentialite-et-gestion-des-cookies.html">Politique de Cookies </a></li>
+		<li><a href="EULA.html">EULA </a></li>
+	</ul>
+
+</footer>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const email = document.getElementById('email');
+    const firstName = document.getElementById('firstName');
+    const lastName = document.getElementById('lastName');
+    const country = document.getElementById('country');
+    const orderNumber = document.getElementById('orderNumber');
+    const productNum = document.getElementById('productNum');
+    const price = document.getElementById('price');
+    const key = document.getElementById('key');
+
+
+    firstName.innerHTML = urlParams.get('firstName');
+    lastName.innerHTML = urlParams.get('lastName');
+    email.innerHTML = urlParams.get('email');
+    country.innerHTML = urlParams.get('country');
+    key.innerHTML = urlParams.get('key');
+    price.innerHTML = urlParams.get('price') + ' &euro;';
+    orderNumber.innerHTML = urlParams.get('orderNum');
+
+    let deviceNum=1;
+    if (urlParams.get('num')!==null || urlParams.get('num')!==undefined)
+        deviceNum = Number(urlParams.get('num'));
+
+    
+    if (deviceNum===2 || deviceNum===3){
+        productNum.innerHTML=deviceNum+" Appareils";
+    }else {
+        productNum.innerHTML="1 Appareil";
+        
+    }
+
+
+
+    if (urlParams.get('redirect')!==null || urlParams.get('redirect')!==undefined)
+	     window.open(urlParams.get('redirect'),'_blank');
+    
+    
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
