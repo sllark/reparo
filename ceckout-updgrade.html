@@ -76,11 +76,11 @@
 							</picture>
 						</div>
 						<div>
-							<h2>
+							<h2 id="planName">
 								Reparo Cleaner PRO
 							</h2>
 							<p>
-								Abonnement de 1 an,&nbsp; <span class="deviceNum">1 Appareil</span>
+								Abonnement de&nbsp;<span id="yearsNum">1 an</span>,&nbsp; <span class="deviceNum" id="deviceNum">1 Appareil</span>
 							</p>
 							<p>
 								Pour Microsoft Windows
@@ -92,36 +92,24 @@
 							</p>
 						</div>
 					</div>
-					
-					<div class="sectionCheckout__productInfo__content__select selectCont">
-						<label for="devicesSelect"> Appareil(s) </label>
-						<select name="devices" id="devicesSelect">
-							<option value="1">1 Appareil</option>
-							<option value="2">2 Appareils</option>
-							<option value="3">3 Appareils</option>
-						</select>
-					</div>
-					
-					
 					<div class="sectionCheckout__productInfo__content__price alignRight">
 						<h2>
 							Prix
 						</h2>
-						<p class="p-strike priceOld">
-							&euro; 39.99
+						<p class="priceDiscounted" id="priceDiscounted">
+							&euro;
 						</p>
-						<p class="priceDiscounted">
-							&euro; 19.99
+						<p class="sectionCheckout__smallText">
+							Charge Anually
 						</p>
 					</div>
-				
-				
+					
 				</div>
 				
 				
 				<div class="row total">
 					<h3>
-						Prix total: <strong class="totalPrice"> &euro; 19.99</strong>
+						Prix total: <strong class="totalPrice"> &euro;</strong>
 					</h3>
 				</div>
 			
@@ -131,7 +119,7 @@
 		
 		
 		<div class="d-flex white checkoutform">
-			<form action="php/submit.php" class="sectionCheckout__form" id="payment-form" method="post">
+			<form action="php/plansSubmit.php" class="sectionCheckout__form" id="payment-form" method="post">
 				<fieldset>
 					<div class="row">
 						<label for="email" data-tid="elements_examples.form.email_label">Email</label>
@@ -421,6 +409,8 @@
 				
 				</fieldset>
 				<input name="deviceNum" type="hidden" id="deviceNumInput" value="1">
+				<input name="yearsNum" type="hidden" id="yearsInput" value="1">
+				<input name="plan" type="hidden" id="planInput" value="lite">
 				<div class="error">
 					<span class="message"></span>
 				</div>
@@ -464,13 +454,6 @@
 </main>
 
 
-<div class="popupNotification">
-	<div class="popupNotification__container">
-		<h2>Ce logiciel a été acheté 37 fois aujourd'hui.</h2>
-	</div>
-</div>
-
-
 <footer>
 	
 	<picture>
@@ -491,6 +474,7 @@
 
 </footer>
 
+<script src="js/checkout-upgrade.js"></script>
 <script src="https://js.stripe.com/v3/"></script>
 <script src="js/main.js"></script>
 <script src="js/checkout.js"></script>

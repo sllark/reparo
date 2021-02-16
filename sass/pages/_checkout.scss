@@ -55,6 +55,9 @@
         width: 50%;
         display: flex;
 
+        picture{
+          display: flex;
+        }
 
         &__img{
           margin-right: 3%;
@@ -74,32 +77,12 @@
 
 
       &__select{
-
         width: 15%;
-        display: flex;
         flex-flow: column;
-        align-items: center;
 
         @media screen and (max-width: 600px) {
           width: 40%;
           margin-top: 2rem;
-        }
-
-
-
-
-        label{
-          font-size: 1.7rem;
-        }
-
-        select{
-          margin-top: 0.7rem;
-          border: 1px solid $color-gray-500;
-          width: 100%;
-          font-size: 1.5rem;
-          padding:0.3rem;
-
-
         }
 
       }
@@ -113,9 +96,12 @@
         text-align: right;
 
         @media screen and (max-width: 600px) {
-
           width: 50%;
           margin-top: 2rem;
+        }
+
+        p{
+          justify-content: flex-end;
         }
 
       }
@@ -174,6 +160,7 @@
         margin: 0.5rem 0;
         display: flex;
         align-items: center;
+        flex-flow: wrap;
 
         @media screen and (max-width: 600px) {
           font-size: 1.8rem;

@@ -87,7 +87,8 @@ window.addEventListener('load', () => {
 
     let deviceSelect=document.querySelector('#devicesSelect');
 
-    deviceSelect.addEventListener('change',handleDevices);
+    if (deviceSelect)
+        deviceSelect.addEventListener('change',handleDevices);
 
 })
 

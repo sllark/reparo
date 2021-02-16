@@ -72,6 +72,25 @@
   }
 
 
+  &--primaryBuy{
+
+    border-radius: unset;
+    color: $color-primary;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 1px solid $color-primary;
+    padding: 1rem 4rem;
+    transition: all 0.4s;
+
+
+
+    &:hover{
+      color: white;
+      background-color: $color-primary;
+    }
+
+  }
+
 
 }
 
